@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Academy</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- GG font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- FontAwesome 6.2.0 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div id="myOverlay" class="overlay none"></div>
+
+  <header>
+
+    <div class="container">
+      <div class="headerContent">
+        <div class="headerLogo"><a href="#">Academy</a></div>
+        <div id="mySearch" class="search">
+          <input type="text" placeholder="Tìm kiếm...," id="timKiem" />
+        </div>
+        <div id="mySort" class="sort">
+          <select name="" id="sortDoiTuong"></select>
+        </div>
+        <div class="headerBtn">
+          <button type="button" id="themMoi" class="btn btn-success">
+            Thêm mới
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div id="formContent" class="formContent transform0">
+        <i class="fa-solid fa-xmark" id="closer"></i>
+        <form action="" id="myForm">
+          <div id="person">
+            <div class="formItem">
+              <i id="tbIconMa" class="fa-solid fa-qrcode"></i>
+              <input type="text" id="ma" placeholder="Mã" onchange="checkMa('ma', 'checkMa')" max="12" />
+            </div>
+            <span class="checkValid" id="checkMa"></span>
+
+            <div class="formItem">
+              <i id="tbIconTen" class="fa-solid fa-user"></i>
+              <input type="text" id="ten" placeholder="Tên" onchange="checkTen('ten', 'checkTen')" maxlength="30" />
+            </div>
+            <span class="checkValid" id="checkTen"></span>
+
+            <div class="formItem">
+              <i id="tbIconEmail" class="fa-solid fa-at"></i>
+              <input type="email" id="email" placeholder="Email" onchange="checkEmail('email', 'checkEmail')"
+                maxlength="40" />
+            </div>
+            <span class="checkValid" id="checkEmail"></span>
+
+            <div class="formItem">
+              <i id="tbIconDiaChi" class="fa-solid fa-location-dot"></i>
+              <input type="text" id="diaChi" placeholder="Địa chỉ" onchange="checkDiaChi('diaChi', 'checkDiaChi')" />
+            </div>
+            <span class="checkValid" id="checkDiaChi"></span>
+
+            <div class="formItem select">
+              <i id="tbIconDoiTuong" class="fa-solid fa-user-group"></i>
+              <select id="doiTuong" onchange="checkDoiTuong('doiTuong', 'checkDoiTuong')">
+                <option value="">Chọn đối tượng</option>
+                <option value="sinh viên">Sinh viên</option>
+                <option value="nhân viên">Nhân viên</option>
+                <option value="khách hàng">Khách hàng</option>
+              </select>
+            </div>
+            <span class="checkValid" id="checkDoiTuong"></span>
+          </div>
+
+          <div id="sinhVien" class="none">
+            <div class="formItem">
+              <i id="tbIconToan" class="fa-solid fa-square-root-variable"></i>
+              <input type="text" id="toan" placeholder="Điểm toán" maxlength="2"
+                onkeyup="checkDiemToan('toan', 'checkDiemToan')" onblur="checkDiemToan('toan', 'checkDiemToan')" />
+            </div>
+            <span class="checkValid" id="checkDiemToan"></span>
+
+            <div class="formItem">
+              <i id="tbIconLy" class="fa-solid fa-tractor"></i>
+              <input type="text" id="ly" placeholder="Điểm lý" maxlength="2" onkeyup="checkDiemLy('ly','checkDiemLy')"
+                onblur="checkDiemLy('ly','checkDiemLy')" />
+            </div>
+            <span class="checkValid" id="checkDiemLy"></span>
+
+            <div class="formItem">
+              <i id="tbIconHoa" class="fa-solid fa-flask-vial"></i>
+              <input type="text" id="hoa" placeholder="Điểm hóa" maxlength="2"
+                onkeyup="checkDiemHoa('hoa','checkDiemHoa')" onblur="checkDiemHoa('hoa','checkDiemHoa')" />
+              />
+            </div>
+            <span class="checkValid" id="checkDiemHoa"></span>
+          </div>
+          <div id="nhanVien" class="none">
+            <div class="formItem">
+              <i id="tbIconNgayLam" class="fa-solid fa-calendar-days"></i>
+              <input type="text" id="soNgayLam" placeholder="Số ngày làm" maxlength="2" />
+            </div>
+            <span class="checkValid" id="checkSoNgayLam"></span>
+
+            <div class="formItem">
+              <i id="tbIconTienLuong" class="fa-solid fa-hand-holding-dollar"></i>
+              <input type="text" id="luongNgay" placeholder="Tiền lương mỗi ngày" maxlength="9" />
+            </div>
+            <span class="checkValid" id="checkTinLuongMoiNgay"></span>
+          </div>
+          <div id="khachHang" class="none">
+            <div class="formItem">
+              <i id="tbIconTenCty" class="fa-solid fa-building"></i>
+              <input type="text" id="tenCty" placeholder="Tên công ty" maxlength="30" />
+            </div>
+            <span class="checkValid" id="checkTenCongTy"></span>
+
+            <div class="formItem">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <input type="text" id="giaTriHd" placeholder="Giá trị hóa đơn" />
+            </div>
+            <span class="checkValid" id="checkGiaTriHoaDon"></span>
+          </div>
+          <div class="formBtn">
+            <button type="button" id="luuDoiTuongMoi">Thêm</button>
+            <button type="button" id="capNhatDoiTuong" class="none">
+              Cập nhật
+            </button>
+            <span id="ketQua"></span>
+          </div>
+        </form>
+      </div>
+      <div id="myTableContent" class="tableContent">
+        <div id="tbRender"></div>
+        <table id="myTable">
+          <tr>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Đối tượng</th>
+            <th>Thông tin riêng</th>
+            <th>Xếp loại</th>
+            <th><i class="fa-solid fa-gear"></i></th>
+          </tr>
+          <tbody id="tBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.none {
+  display: none;
+}
+
+.transform0 {
+  transform: translate(-50%, -300%) !important;
+  transition: all 0.5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1s;
+}
+
+.text {
+  text-transform: capitalize;
+}
+
+.code {
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+header .headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.3);
+}
+header .headerContent .headerLogo a {
+  text-decoration: none;
+  color: green;
+  font-size: 30px;
+  font-weight: bold;
+}
+header .headerContent .search input {
+  height: 30px;
+  width: 400px;
+  padding: 0 10px;
+  border: 1px solid orangered;
+  border-radius: 5px;
+}
+header .headerContent .search input:focus {
+  outline: 1px solid orangered;
+  border-radius: 5px;
+}
+header .headerContent .sort select {
+  height: 30px;
+  width: 140px;
+  border: 1px solid orangered;
+  border-radius: 5px;
+}
+header .headerContent .sort select:focus {
+  outline: 1px solid orangered;
+  border-radius: 5px;
+}
+header .headerContent .headerBtn button {
+  width: 120px;
+  height: 30px;
+  background-color: orangered;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.5s;
+}
+header .headerContent .headerBtn button:hover {
+  background-color: crimson;
+}
+
+main .formContent {
+  width: 400px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+main .formContent #closer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: orangered;
+  cursor: pointer;
+}
+main .formContent #myForm {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid orangered;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+main .formContent #myForm .formItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid silver;
+  margin-top: 10px;
+}
+main .formContent #myForm .formItem input {
+  margin-left: 5px;
+  width: 100%;
+  height: 30px;
+  border: none;
+  outline: none;
+  padding: 0 5px;
+  border-left: 2px solid transparent;
+}
+main .formContent #myForm .formItem input:focus {
+  border-left: 2px solid orangered;
+}
+main .formContent #myForm .formItem select {
+  width: 100%;
+  height: 25px;
+  border: none;
+  outline: none;
+}
+main .formContent #myForm span {
+  display: block;
+  color: red;
+}
+main .formContent #myForm .formBtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .formContent #myForm .formBtn button {
+  padding: 7px 20px;
+  font-size: 16px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+main .formContent #myForm .formBtn button:hover {
+  background-color: crimson;
+}
+main .formContent #myForm .formBtn #ketQua {
+  color: orangered;
+  display: block;
+  text-align: center;
+  width: 220px;
+  font-size: 16px;
+  font-weight: bold;
+}
+main .tableContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+main .tableContent table tr:nth-child(even) {
+  background-color: rgba(255, 68, 0, 0.158);
+}
+main .tableContent table tr th {
+  padding: 5px 10px;
+  background-color: orangered;
+  color: white;
+}
+main .tableContent table tr td {
+  padding: 5px 10px;
+}
+main .tableContent table tr td:last-child {
+  text-align: center;
+}
+main .tableContent table tr td:last-child button {
+  background-color: transparent;
+  border: none;
+  color: orangered;
+  font-size: 18px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .headerContent {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .headerContent .headerLogo a {
+    text-decoration: none;
+  }
+  .headerContent .search {
+    margin-top: 10px;
+  }
+  .headerContent .search input {
+    margin-top: 10px;
+  }
+  .headerContent .sort select#sortDoiTuong {
+    margin-top: 10px;
+    width: 400px;
+  }
+  .headerContent .headerBtn button {
+    margin-top: 10px;
+  }
+  .tableContent {
+    max-width: 100%;
+    overflow-x: scroll;
+    margin-top: -10px;
+  }
+}
+@media screen and (max-width: 786px) {
+  .headerContent {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .headerContent .headerLogo a {
+    text-decoration: none;
+  }
+  .headerContent .search {
+    margin-top: 10px;
+  }
+  .headerContent .search input {
+    margin-top: 10px;
+  }
+  .headerContent .sort select#sortDoiTuong {
+    margin-top: 10px;
+    width: 400px;
+  }
+  .headerContent .headerBtn button {
+    margin-top: 10px;
+  }
+  .tableContent {
+    max-width: 100%;
+    overflow-x: scroll;
+    margin-top: -10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .headerContent {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .headerContent .headerLogo a {
+    text-decoration: none;
+  }
+  .headerContent .search {
+    margin-top: 10px;
+  }
+  .headerContent .search input {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .headerContent .sort select#sortDoiTuong {
+    margin-top: 10px;
+    width: 400px;
+  }
+  .headerContent .headerBtn button {
+    margin-top: 10px;
+  }
+  .tableContent {
+    max-width: 100%;
+    overflow-x: scroll;
+    margin-top: -10px;
+  }
+}/*# sourceMappingURL=style.css.map */
