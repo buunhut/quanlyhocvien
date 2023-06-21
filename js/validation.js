@@ -2,7 +2,7 @@ export default class CheckInput {
   checkMa = (id, thongBao) => {
     let regexMa = document.getElementById(id).value;
     if (regexMa == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
       return false;
     } else {
       document.getElementById(thongBao).innerHTML = "";
@@ -13,7 +13,7 @@ export default class CheckInput {
   checkTen = (id, thongBao) => {
     let regexTen = document.getElementById(id).value;
     if (regexTen == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
       return false;
     } else {
       let chiLayChu = /^[\p{L} ]+$/u;
@@ -32,7 +32,7 @@ export default class CheckInput {
   checkEmail = (id, thongBao) => {
     let regexEmail = document.getElementById(id).value;
     if (regexEmail == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
       return false;
     } else {
       let mauRegexEmail =
@@ -53,7 +53,7 @@ export default class CheckInput {
   checkDiaChi = (id, thongBao) => {
     let regexDiaChi = document.getElementById(id).value;
     if (regexDiaChi == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
       return false;
     } else {
       document.getElementById(thongBao).innerHTML = "";
@@ -61,67 +61,68 @@ export default class CheckInput {
     }
   };
 
-  checkDiem = (id, thongBao) => {
-    let regexDiem = document.getElementById(id).value;
-    if (regexDiem == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
-      return false;
-    } else {
-      let chiLaySo = /[0-9]/g;
-      let diemHopLe = chiLaySo.test(regexDiem);
-      if (diemHopLe) {
-        if (regexDiem >= 0 && regexDiem <= 10) {
-          document.getElementById(thongBao).innerHTML = "";
-          return true;
-        } else {
-          document.getElementById(thongBao).innerHTML =
-            "Vui lòng nhập số điểm hợp lệ";
-          return false;
-        }
-      } else {
-        document.getElementById(thongBao).innerHTML = "Vui lòng nhập ký tự số";
-      }
-    }
-  };
   checkSoNgayLam = (id, thongBao) => {
-    let regexSoNgayLam = document.getElementById(id).value;
-    if (regexSoNgayLam == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
+    let input = document.getElementById(id).value;
+    if (input == "") {
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
       return false;
     } else {
-      let chiLaySo = /[0-9]/g;
-      let ngayHopLe = chiLaySo.test(regexSoNgayLam);
-      if (ngayHopLe) {
-        if (regexSoNgayLam >= 0 && regexSoNgayLam <= 30) {
-          document.getElementById(thongBao).innerHTML = "";
-          return true;
-        } else {
-          document.getElementById(thongBao).innerHTML =
-            "Vui lòng nhập số ngày làm hợp lệ";
-          return false;
-        }
+      document.getElementById(thongBao).innerHTML = "";
+      let number = Number(
+        this.chiLaySoCuaChuoi(document.getElementById(id).value)
+      );
+      document.getElementById(id).value = number;
+      if (number < 0 || number > 31) {
+        document.getElementById(thongBao).innerHTML = "Số ngày làm từ 0 đến 31";
+        return false;
       } else {
-        document.getElementById(thongBao).innerHTML = "Vui lòng nhập ký tự số";
+        document.getElementById(thongBao).innerHTML = "";
+        return true;
       }
     }
   };
   checkDiem = (id, thongBao) => {
     let input = document.getElementById(id).value;
-    let myRegex = /^[0-9]+$/g;
-    let result = myRegex.test(input);
     if (input == "") {
-      document.getElementById(thongBao).innerHTML = "Vui lòng nhập trường này";
-      return false;
-    } else if (result == false) {
-      document.getElementById(id).value = "";
-      document.getElementById(thongBao).innerHTML = "Chỉ được nhập số";
-      return false;
-    } else if (input > 10) {
-      document.getElementById(thongBao).innerHTML = "Điểm lớn nhất là 10.";
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
       return false;
     } else {
       document.getElementById(thongBao).innerHTML = "";
+      let number = Number(
+        this.chiLaySoCuaChuoi(document.getElementById(id).value)
+      );
+      console.log(number);
+      document.getElementById(id).value = number;
+      if (number < 0 || number > 10) {
+        document.getElementById(thongBao).innerHTML = "Số điểm từ 0 đến 10";
+        return false;
+      } else {
+        document.getElementById(thongBao).innerHTML = "";
+        return true;
+      }
+    }
+  };
+  checkSoTien = (id, thongBao) => {
+    let input = document.getElementById(id).value;
+    if (input == "") {
+      document.getElementById(thongBao).innerHTML = "Không được bỏ trống";
+      return false;
+    } else {
+      document.getElementById(thongBao).innerHTML = "";
+      let number = Number(
+        this.chiLaySoCuaChuoi(
+          document.getElementById(id).value.replaceAll(/[, .]/g, "")
+        )
+      );
+      document.getElementById(id).value = number.toLocaleString();
+      document.getElementById(thongBao).innerHTML = "";
       return true;
     }
+  };
+  chiLaySoCuaChuoi = (str) => {
+    var numberRegex = /\d+/g;
+    var numbers = str.match(numberRegex);
+    var result = numbers ? numbers.join("") : "";
+    return result;
   };
 }

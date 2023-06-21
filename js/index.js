@@ -108,7 +108,7 @@ document.getElementById("luuDoiTuongMoi").addEventListener("click", () => {
       for (let inputnhanVien of allInputs) {
         let { id, value } = inputnhanVien;
         if (id == "soNgayLam" || id == "luongNgay") {
-          value = Number(value);
+          value = Number(value.replaceAll(/[, .]/g, ""));
         } else {
           value = value.toLowerCase().trim();
         }
@@ -120,7 +120,9 @@ document.getElementById("luuDoiTuongMoi").addEventListener("click", () => {
         checkInput.checkMa("ten", "checkTen") &
         checkInput.checkEmail("email", "checkEmail") &
         checkInput.checkDiaChi("diaChi", "checkDiaChi") &
-        checkInput.checkMa("doiTuong", "checkDoiTuong");
+        checkInput.checkMa("doiTuong", "checkDoiTuong") &
+        checkInput.checkSoNgayLam("soNgayLam", "checkSoNgayLam") &
+        checkInput.checkSoTien("luongNgay", "checkTienLuongMoiNgay");
       if (!valid) {
         return;
       }
@@ -133,7 +135,7 @@ document.getElementById("luuDoiTuongMoi").addEventListener("click", () => {
       for (let inputKhachHang of allInputs) {
         let { id, value } = inputKhachHang;
         if (id == "giaTriHd") {
-          value = Number(value);
+          value = Number(value.replaceAll(/[, .]/g, ""));
         } else {
           value = value.toLowerCase().trim();
         }
@@ -145,7 +147,9 @@ document.getElementById("luuDoiTuongMoi").addEventListener("click", () => {
         checkInput.checkMa("ten", "checkTen") &
         checkInput.checkEmail("email", "checkEmail") &
         checkInput.checkDiaChi("diaChi", "checkDiaChi") &
-        checkInput.checkMa("doiTuong", "checkDoiTuong");
+        checkInput.checkMa("doiTuong", "checkDoiTuong") &
+        checkInput.checkMa("tenCty", "checkTenCongTy") &
+        checkInput.checkSoTien("giaTriHd", "checkGiaTriHoaDon");
 
       if (!valid) {
         return;
@@ -205,7 +209,7 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
       for (let inputnhanVien of allInputs) {
         let { id, value } = inputnhanVien;
         if (id == "soNgayLam" || id == "luongNgay") {
-          value = Number(value);
+          value = Number(value.replaceAll(/[, .]/g, ""));
         } else {
           value = value.toLowerCase().trim();
         }
@@ -217,7 +221,9 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
         checkInput.checkMa("ten", "checkTen") &
         checkInput.checkEmail("email", "checkEmail") &
         checkInput.checkDiaChi("diaChi", "checkDiaChi") &
-        checkInput.checkMa("doiTuong", "checkDoiTuong");
+        checkInput.checkMa("doiTuong", "checkDoiTuong") &
+        checkInput.checkSoNgayLam("soNgayLam", "checkSoNgayLam") &
+        checkInput.checkSoTien("luongNgay", "checkTienLuongMoiNgay");
       if (!valid) {
         return;
       }
@@ -231,7 +237,7 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
       for (let inputKhachHang of allInputs) {
         let { id, value } = inputKhachHang;
         if (id == "giaTriHd") {
-          value = Number(value);
+          value = Number(value.replaceAll(/[, .]/g, ""));
         } else {
           value = value.toLowerCase().trim();
         }
@@ -243,7 +249,9 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
         checkInput.checkMa("ten", "checkTen") &
         checkInput.checkEmail("email", "checkEmail") &
         checkInput.checkDiaChi("diaChi", "checkDiaChi") &
-        checkInput.checkMa("doiTuong", "checkDoiTuong");
+        checkInput.checkMa("doiTuong", "checkDoiTuong") &
+        checkInput.checkMa("tenCty", "checkTenCongTy") &
+        checkInput.checkSoTien("giaTriHd", "checkGiaTriHoaDon");
 
       if (!valid) {
         return;
@@ -292,4 +300,16 @@ window.checkDiemLy = (id, thongBao) => {
 };
 window.checkDiemHoa = (id, thongBao) => {
   checkInput.checkDiem(id, thongBao);
+};
+window.checkTenCty = (id, thongBao) => {
+  checkInput.checkMa(id, thongBao);
+};
+window.checkSoTien = (id, thongBao) => {
+  checkInput.checkSoTien(id, thongBao);
+};
+window.checkSoNgayLam = (id, thongBao) => {
+  checkInput.checkSoNgayLam(id, thongBao);
+};
+window.checkTienLuong = (id, thongBao) => {
+  checkInput.checkSoTien(id, thongBao);
 };

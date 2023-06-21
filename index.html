@@ -29,6 +29,7 @@
       <div class="headerContent">
         <div class="headerLogo"><a href="#">Academy</a></div>
         <div id="mySearch" class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Tìm kiếm...," id="timKiem" />
         </div>
         <div id="mySort" class="sort">
@@ -110,26 +111,32 @@
           <div id="nhanVien" class="none">
             <div class="formItem">
               <i id="tbIconNgayLam" class="fa-solid fa-calendar-days"></i>
-              <input type="text" id="soNgayLam" placeholder="Số ngày làm" maxlength="2" />
+              <input type="text" id="soNgayLam" placeholder="Số ngày làm" maxlength="2"
+                onkeyup="checkSoNgayLam('soNgayLam', 'checkSoNgayLam')"
+                onblur="checkSoNgayLam('soNgayLam', 'checkSoNgayLam')" />
             </div>
             <span class="checkValid" id="checkSoNgayLam"></span>
 
             <div class="formItem">
               <i id="tbIconTienLuong" class="fa-solid fa-hand-holding-dollar"></i>
-              <input type="text" id="luongNgay" placeholder="Tiền lương mỗi ngày" maxlength="9" />
+              <input type="text" id="luongNgay" placeholder="Tiền lương mỗi ngày" maxlength="9"
+                onkeyup="checkTienLuong('luongNgay','checkTienLuongMoiNgay')"
+                onblur="checkTienLuong('luongNgay','checkTienLuongMoiNgay')" />
             </div>
-            <span class="checkValid" id="checkTinLuongMoiNgay"></span>
+            <span class="checkValid" id="checkTienLuongMoiNgay"></span>
           </div>
           <div id="khachHang" class="none">
             <div class="formItem">
               <i id="tbIconTenCty" class="fa-solid fa-building"></i>
-              <input type="text" id="tenCty" placeholder="Tên công ty" maxlength="30" />
+              <input type="text" id="tenCty" placeholder="Tên công ty" maxlength="30"
+                onkeyup="checkTenCty('tenCty', 'checkTenCongTy')" onblur="checkTenCty('tenCty', 'checkTenCongTy')" />
             </div>
             <span class="checkValid" id="checkTenCongTy"></span>
 
             <div class="formItem">
               <i class="fa-solid fa-file-invoice-dollar"></i>
-              <input type="text" id="giaTriHd" placeholder="Giá trị hóa đơn" />
+              <input type="text" id="giaTriHd" placeholder="Giá trị hóa đơn"
+                onkeyup="checkSoTien('giaTriHd','checkGiaTriHoaDon')" />
             </div>
             <span class="checkValid" id="checkGiaTriHoaDon"></span>
           </div>

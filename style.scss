@@ -47,15 +47,26 @@ header {
       }
     }
     .search {
+      display: flex;
+      justify-content: flex-start;
+      i {
+        width: 30px;
+        height: 30px;
+        color: white;
+        background-color: orangered;
+        text-align: center;
+        line-height: 30px;
+      }
+
       input {
         height: 30px;
         width: 400px;
         padding: 0 10px;
         border: 1px solid orangered;
-        border-radius: 5px;
+        border-radius: 0 5px 5px 0;
         &:focus {
-          outline: 1px solid orangered;
-          border-radius: 5px;
+          outline: none;
+          border-radius: 0 5px 5px 0;
         }
       }
     }
@@ -65,8 +76,8 @@ header {
       border: 1px solid orangered;
       border-radius: 5px;
       &:focus {
-        outline: 1px solid orangered;
-        border-radius: 5px;
+        outline: None;
+        // border-radius: 5px;
       }
     }
     .headerBtn {
@@ -143,6 +154,7 @@ main {
       span {
         display: block;
         color: red;
+        font-size: 14px;
       }
 
       .formBtn {

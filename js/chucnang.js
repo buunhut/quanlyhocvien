@@ -14,6 +14,13 @@ export default class ChucNang {
     document.getElementById("checkEmail").innerHTML = "";
     document.getElementById("checkDiaChi").innerHTML = "";
     document.getElementById("checkDoiTuong").innerHTML = "";
+    document.getElementById("checkDiemToan").innerHTML = "";
+    document.getElementById("checkDiemLy").innerHTML = "";
+    document.getElementById("checkDiemHoa").innerHTML = "";
+    document.getElementById("checkSoNgayLam").innerHTML = "";
+    document.getElementById("checkTienLuongMoiNgay").innerHTML = "";
+    document.getElementById("checkTenCongTy").innerHTML = "";
+    document.getElementById("checkGiaTriHoaDon").innerHTML = "";
   };
   themDoiTuong = (doiTuong) => {
     this.tatCaDoiTuong.push(doiTuong);

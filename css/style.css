@@ -51,16 +51,28 @@ header .headerContent .headerLogo a {
   font-size: 30px;
   font-weight: bold;
 }
+header .headerContent .search {
+  display: flex;
+  justify-content: flex-start;
+}
+header .headerContent .search i {
+  width: 30px;
+  height: 30px;
+  color: white;
+  background-color: orangered;
+  text-align: center;
+  line-height: 30px;
+}
 header .headerContent .search input {
   height: 30px;
   width: 400px;
   padding: 0 10px;
   border: 1px solid orangered;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
 }
 header .headerContent .search input:focus {
-  outline: 1px solid orangered;
-  border-radius: 5px;
+  outline: none;
+  border-radius: 0 5px 5px 0;
 }
 header .headerContent .sort select {
   height: 30px;
@@ -69,8 +81,7 @@ header .headerContent .sort select {
   border-radius: 5px;
 }
 header .headerContent .sort select:focus {
-  outline: 1px solid orangered;
-  border-radius: 5px;
+  outline: None;
 }
 header .headerContent .headerBtn button {
   width: 120px;
@@ -140,6 +151,7 @@ main .formContent #myForm .formItem select {
 main .formContent #myForm span {
   display: block;
   color: red;
+  font-size: 14px;
 }
 main .formContent #myForm .formBtn {
   margin-top: 20px;
