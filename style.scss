@@ -5,7 +5,7 @@
   font-family: "Montserrat", sans-serif;
 }
 .none {
-  display: none;
+  display: none !important;
 }
 .transform0 {
   transform: translate(-50%, -300%) !important;
