@@ -125,7 +125,6 @@ export default class ChucNang {
     });
     document.getElementById("tBody").innerHTML = content;
   };
-
   chinhSua = (ma) => {
     this.tatMoForm();
     document.getElementById("luuDoiTuongMoi").classList.add("none");
@@ -165,7 +164,6 @@ export default class ChucNang {
       );
       let inputnhanVien = document.querySelectorAll("#myForm #nhanVien input");
       let allInputs = [...personInputs, ...inputnhanVien];
-
       for (let input of allInputs) {
         let { id } = input;
         input.value = doiTuongCanSua[id];
@@ -216,7 +214,6 @@ export default class ChucNang {
     this.renderGiaoDien();
     document.getElementById("ketQua").innerHTML = "Cập nhật thành công";
   };
-
   timKiemDoiTuong = () => {
     let input = this.boDauTiengViet(
       document.getElementById("timKiem").value
@@ -255,7 +252,6 @@ export default class ChucNang {
       this.renderGiaoDien(ketQua);
     }
   };
-
   resetForm = () => {
     document.getElementById("myForm").reset();
   };

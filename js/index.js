@@ -171,7 +171,6 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
     let personInputs = document.querySelectorAll(
       "#myForm #person input, select "
     );
-    // console.log(personInputs);
     if (mySelect == "sinh viên") {
       let inputSinhVien = document.querySelectorAll("#myForm #sinhVien input");
       let allInputs = [...personInputs, ...inputSinhVien];
@@ -184,6 +183,21 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
         }
         sinhVien[id] = value;
       }
+      let valid = true;
+      valid =
+        checkInput.checkMa("ma", "checkMa") &
+        checkInput.checkMa("ten", "checkTen") &
+        checkInput.checkEmail("email", "checkEmail") &
+        checkInput.checkDiaChi("diaChi", "checkDiaChi") &
+        checkInput.checkMa("doiTuong", "checkDoiTuong") &
+        checkInput.checkDiem("toan", "checkDiemToan") &
+        checkInput.checkDiem("ly", "checkDiemLy") &
+        checkInput.checkDiem("hoa", "checkDiemHoa");
+
+      if (!valid) {
+        return;
+      }
+
       chucNang.capNhat(sinhVien);
     } else if (mySelect == "nhân viên") {
       let inputnhanVien = document.querySelectorAll("#myForm #nhanVien input");
@@ -197,6 +211,17 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
         }
         nhanVien[id] = value;
       }
+      let valid = true;
+      valid =
+        checkInput.checkMa("ma", "checkMa") &
+        checkInput.checkMa("ten", "checkTen") &
+        checkInput.checkEmail("email", "checkEmail") &
+        checkInput.checkDiaChi("diaChi", "checkDiaChi") &
+        checkInput.checkMa("doiTuong", "checkDoiTuong");
+      if (!valid) {
+        return;
+      }
+
       chucNang.capNhat(nhanVien);
     } else if (mySelect == "khách hàng") {
       let inputKhachHang = document.querySelectorAll(
@@ -212,6 +237,18 @@ document.getElementById("capNhatDoiTuong").addEventListener("click", () => {
         }
         khachHang[id] = value;
       }
+      let valid = true;
+      valid =
+        checkInput.checkMa("ma", "checkMa") &
+        checkInput.checkMa("ten", "checkTen") &
+        checkInput.checkEmail("email", "checkEmail") &
+        checkInput.checkDiaChi("diaChi", "checkDiaChi") &
+        checkInput.checkMa("doiTuong", "checkDoiTuong");
+
+      if (!valid) {
+        return;
+      }
+
       chucNang.capNhat(khachHang);
     }
   }

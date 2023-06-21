@@ -115,11 +115,13 @@ export default class CheckInput {
     } else if (result == false) {
       document.getElementById(id).value = "";
       document.getElementById(thongBao).innerHTML = "Chỉ được nhập số";
+      return false;
     } else if (input > 10) {
       document.getElementById(thongBao).innerHTML = "Điểm lớn nhất là 10.";
       return false;
     } else {
       document.getElementById(thongBao).innerHTML = "";
+      return true;
     }
   };
 }
