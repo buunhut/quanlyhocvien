@@ -65,7 +65,7 @@ header .headerContent .search i {
 }
 header .headerContent .search input {
   height: 30px;
-  width: 400px;
+  width: 370px;
   padding: 0 10px;
   border: 1px solid orangered;
   border-radius: 0 5px 5px 0;
@@ -276,9 +276,12 @@ main .tableContent table tr td:last-child button {
   }
   .headerContent .search {
     margin-top: 10px;
+    padding: 0 10px;
+  }
+  .headerContent .search i {
+    margin-top: 10px;
   }
   .headerContent .search input {
-    width: 100%;
     margin-top: 10px;
   }
   .headerContent .sort select#sortDoiTuong {
