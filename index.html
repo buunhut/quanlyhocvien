@@ -27,16 +27,16 @@
 
     <div class="container">
       <div class="headerContent">
-        <div class="headerLogo"><a href="#">Học Viện CyberSoft</a></div>
-        <div id="mySearch" class="search">
+        <div class="headerLogo"><a id="myLogo" href="#"></a></div>
+        <div id="mySearch" class="search none">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Tìm kiếm...," id="timKiem" />
         </div>
-        <div id="mySort" class="sort">
+        <div id="mySort" class="sort none">
           <select name="" id="sortDoiTuong"></select>
         </div>
         <div class="headerBtn">
-          <button type="button" id="themMoi" class="btn btn-success">
+          <button type="button" id="themMoi" class="btn btn-success none">
             Thêm mới
           </button>
         </div>
@@ -150,8 +150,8 @@
         </form>
       </div>
       <div id="myTableContent" class="tableContent">
-        <div id="tbRender"></div>
-        <table id="myTable">
+        <div id="tbRender" class="none"></div>
+        <table id="myTable" class="none">
           <tr>
             <th>Mã</th>
             <th>Tên</th>
