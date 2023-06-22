@@ -313,3 +313,7 @@ window.checkSoNgayLam = (id, thongBao) => {
 window.checkTienLuong = (id, thongBao) => {
   checkInput.checkSoTien(id, thongBao);
 };
+
+chucNang.tuDongGoChu("myLogo", "Welcome to CyberSoft,", 50);
+chucNang.hienMyButton("themMoi", 2000);
+chucNang.hienMyButton("tbRender", 1800);

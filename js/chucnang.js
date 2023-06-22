@@ -278,9 +278,13 @@ export default class ChucNang {
       <h2 style="color:red; text-align:center; margin-top:20px">Chưa có dữ liệu</h2>
       `;
     } else {
-      document.getElementById("myTable").classList.remove("none");
-      document.getElementById("mySearch").classList.remove("none");
-      document.getElementById("mySort").classList.remove("none");
+      this.hienMyButton("mySearch", 1800);
+      this.hienMyButton("mySort", 2000);
+      this.hienMyButton("myTable", 2200);
+
+      // document.getElementById("myTable").classList.remove("none");
+      // document.getElementById("mySearch").classList.remove("none");
+      // document.getElementById("mySort").classList.remove("none");
       document.getElementById("tbRender").innerHTML = "";
       let content = `<option value="">Chọn đối tượng</option>`;
       arrSort.forEach((item) => {
@@ -536,5 +540,25 @@ export default class ChucNang {
     return str.replace(/[^\u0000-\u007E]/g, function (a) {
       return mauText[a] || a;
     });
+  };
+  tuDongGoChu = (id, noiDungChu, tocDo) => {
+    const logo = document.getElementById(id);
+    const text = noiDungChu;
+    const spd = tocDo;
+    let i = 0;
+
+    const goChu = setInterval(() => {
+      logo.innerHTML += text.charAt(i);
+      i++;
+      if (i >= text.length) {
+        clearInterval(goChu);
+      }
+    }, spd);
+  };
+  hienMyButton = (id, delay) => {
+    setTimeout(() => {
+      const myButton = document.getElementById(id);
+      myButton.classList.remove("none");
+    }, delay);
   };
 }
